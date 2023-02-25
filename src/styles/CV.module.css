@@ -1,0 +1,49 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.main__section {
+  font-size: clamp(3rem, 6vw, 18rem);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: black;
+  color: black;
+
+  animation: imageAnimation 1s 1s ease-out forwards;
+  transition: all 0.3s ease-out;
+}
+
+.projects:hover {
+  cursor: pointer;
+  color: white;
+
+  transform: translateX(10px);
+}
+
+.resume:hover {
+  cursor: pointer;
+  color: white;
+
+  transform: translateX(-10px);
+}
+
+.main__sectionImage {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes imageAnimation {
+  from {
+    background-color: black;
+    color: black;
+  }
+  to {
+    background-color: #f1f1f1;
+    color: #2d2d2d;
+  }
+}
