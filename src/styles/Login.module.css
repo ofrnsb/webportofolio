@@ -1,0 +1,84 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  justify-items: center;
+  align-items: center;
+}
+.main > div {
+  background-color: #f0f1f1;
+
+  padding: 2rem;
+
+  border-radius: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 0.5rem;
+}
+.main > div > input {
+  all: unset;
+
+  background-color: #f2f2f2;
+
+  padding: 0.5rem;
+
+  border: 2px solid #ebebeb;
+  border-radius: 10px;
+
+  width: min-content;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-left: 0.6rem;
+}
+
+.register {
+  transition: all 0.2s ease-in;
+  color: gray;
+  opacity: 0.4;
+}
+
+.register:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: transparent;
+
+  transition: all 0.2s ease-in;
+}
+
+.buttonWrapper button {
+  background-color: #e0e0e0;
+
+  width: 30px;
+  height: 30px;
+
+  border: 2px solid #ebebeb;
+  border-radius: 50%;
+
+  text-align: center;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.buttonWrapper button:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.buttonWrapper:hover {
+  color: gray;
+}

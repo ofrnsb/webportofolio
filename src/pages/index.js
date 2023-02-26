@@ -1,7 +1,6 @@
-import styles from '@/styles/Home.module.css';
 import { Inter } from '@next/font/google';
 import Head from 'next/head';
-import Link from 'next/link';
+import LoginPage from './Login';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,21 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <div className={styles.main__description}>
-          <main className={styles.main__Title}>Software Engineer.</main>
-          <p>
-            I&#39;m <i>Ondi Frans Butarbutar</i>, a Software Engineer —
-            currently working at Bank Negara Indonesia, and have delivered
-            mission-focused projects and new features that drive results and
-            help achieve business goals
-          </p>
-        </div>
-
-        <Link href="/CV">
-          <button className={styles.main__circleButton}>X</button>
-        </Link>
-      </main>
+      <LoginPage />
     </>
   );
 }

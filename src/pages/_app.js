@@ -1,13 +1,14 @@
-import { Scontainer } from '@/Components/Components';
-import Navbar from '@/Components/Navbar';
+import Container from '@/Components/Container';
+import { store } from '@/Modals/Stores/Store';
 import '@/styles/globals.css';
+import { Provider } from 'react-redux';
 
 export default function App({ Component, pageProps }) {
-  console.log(pageProps);
   return (
-    <Scontainer>
-      <Navbar />
-      <Component {...pageProps} />
-    </Scontainer>
+    <Provider store={store}>
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+    </Provider>
   );
 }

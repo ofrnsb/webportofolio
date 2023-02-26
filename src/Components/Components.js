@@ -12,7 +12,9 @@ export const Scontainer = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content auto;
+
+  grid-template-rows: ${(props) =>
+    props.isLogin ? 'min-content auto' : 'auto'};
   gap: clamp(1.5rem, 2.5vw, 2.5rem);
 `;
 
