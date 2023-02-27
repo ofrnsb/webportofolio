@@ -1,4 +1,9 @@
-import { updatePassword, updateUsername } from '@/Modals/Reducers/Reducer';
+import useAxiosPost from '@/Controller/useFetch';
+import {
+  updateCompany,
+  updatePassword,
+  updateUsername
+} from '@/Modals/Reducers/Reducer';
 import styles from '@/styles/Login.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -6,6 +11,7 @@ import { useDispatch } from 'react-redux';
 
 const LoginPage = () => {
   const dispatch = useDispatch();
+  const { postData } = useAxiosPost("localhost:8080/register");
 
   return (
     <>
@@ -23,17 +29,26 @@ const LoginPage = () => {
             onChange={(e) => dispatch(updateUsername(e.target.value))}
           />
           <input
+            placeholder="Company"
+            onChange={(e) => dispatch(updateCompany(e.target.value))}
+          />
+          <input
           type="password"
             placeholder="Password"
             onChange={(e) => dispatch(updatePassword(e.target.value))}
           />
 
           <div className={styles.wrapper}>
-            <Link href="/Register">
-              <span className={styles.register}>Register</span>
+            <Link href="/Login">
+              <span className={styles.register}>Login</span>
             </Link>
 
-            <span className={styles.buttonWrapper}>
+            <span
+              className={styles.buttonWrapper}
+              onClick={() => {
+                postData();
+              }}
+            >
               <button></button>
             </span>
           </div>

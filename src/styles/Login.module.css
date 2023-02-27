@@ -8,9 +8,11 @@
 .main > div {
   background-color: #f0f1f1;
 
-  padding: 2rem;
+  padding: 1.5rem;
 
   border-radius: 20px;
+
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -41,12 +43,12 @@
 .register {
   transition: all 0.2s ease-in;
   color: gray;
-  opacity: 0.4;
+  color: rgb(184, 184, 184);
 }
 
 .register:hover {
   cursor: pointer;
-  opacity: 1;
+  color: gray;
 }
 
 .buttonWrapper {
@@ -61,7 +63,7 @@
 }
 
 .buttonWrapper button {
-  background-color: #e0e0e0;
+  background-color: #f5f5f5;
 
   width: 30px;
   height: 30px;
@@ -71,14 +73,15 @@
 
   text-align: center;
 
+  scale: 1;
+
   transition: all 0.2s ease-in-out;
 }
 
 .buttonWrapper button:hover {
   cursor: pointer;
-  background-color: #f5f5f5;
-}
+  background-color: #c5f6e2;
+  border: 2px solid #c5f6e2;
 
-.buttonWrapper:hover {
-  color: gray;
+  scale: 0.9;
 }

@@ -13,14 +13,14 @@ const Reducer = createSlice({
     },
     updateCompany(state, action) {
       state.userData = {
-        ...state.company,
-        username: action.payload,
+        ...state.userData,
+        CompanyName: action.payload,
       };
     },
     updatePassword(state, action) {
       state.userData = {
-        ...state.password,
-        username: action.payload,
+        ...state.userData,
+        password: action.payload,
       };
     },
     isUserLogin(state, action) {
@@ -29,5 +29,6 @@ const Reducer = createSlice({
   },
 });
 
-export const { updateUsername } = Reducer.actions;
+export const { updateUsername, updateCompany, updatePassword, isUserLogin } =
+  Reducer.actions;
 export default Reducer.reducer;
