@@ -5,7 +5,7 @@
   justify-items: center;
   align-items: center;
 }
-.main > div {
+.main > form {
   background-color: #f0f1f1;
 
   padding: 1.5rem;
@@ -19,7 +19,7 @@
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 0.5rem;
 }
-.main > div > input {
+.main > form > input {
   all: unset;
 
   background-color: #f2f2f2;

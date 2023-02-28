@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <Snav isAnimated={isAnimated}>
-      <Link href="/">
+      <Link href="/MainPage">
         <div>
           Ob
           <sup>®</sup>
