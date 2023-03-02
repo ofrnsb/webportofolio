@@ -16,7 +16,7 @@ const LoginPage = () => {
   const { isLogin } = useSelector((state) => state.Appreducer.userData);
   const inputRef = useRef();
 
-  const { postData, dispatch } = useAxiosPost(
+  const { postData, dispatch, error, fetchData } = useAxiosPost(
     `${baseUrl}/register`,
     userData,
     'Register'
@@ -49,6 +49,7 @@ const LoginPage = () => {
 
       <main className={styles.main}>
         <form action="" ref={inputRef}>
+          {error && <span className={styles.Error}>{fetchData}</span>}
           <input
             type="text"
             placeholder="Username"

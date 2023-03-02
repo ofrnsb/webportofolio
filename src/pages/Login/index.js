@@ -12,7 +12,7 @@ const LoginPage = () => {
     (state) => state.Appreducer.userData
   );
 
-  const { postData, dispatch } = useAxiosPost(
+  const { postData, dispatch, error, fetchData } = useAxiosPost(
     `${baseUrl}/login`,
     {
       username,
@@ -57,6 +57,8 @@ const LoginPage = () => {
 
       <main className={styles.main}>
         <form action="" ref={inputRef}>
+          {error && <span className={styles.Error}>{fetchData}</span>}
+
           <input
             placeholder="Username"
             onChange={(e) => dispatch(updateUsername(e.target.value))}

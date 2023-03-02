@@ -1,0 +1,17 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.main__section {
+  font-size: clamp(4rem, 6vw, 18rem);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f1f1f1;
+  color: black;
+
+  transition: all 0.3s ease-out;
+}
