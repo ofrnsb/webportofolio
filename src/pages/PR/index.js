@@ -17,7 +17,7 @@ const Index = () => {
     } else {
       dispatch(isUserLogin(true));
     }
-  }, []);
+  });
 
   return (
     <>

@@ -126,12 +126,12 @@ const Timeline = () => {
               <p>
                 Recently, I was about the fact that I had been selected as one
                 of the thirty developers to participate in the prestigious
-                "Maverick WM" project, I feel incredibly fortunate to have been
-                chosen, and I am excited to contribute my skills and expertise
-                to this innovative project. I am honored to have the opportunity
-                to work alongside some of the brightest minds in the industry,
-                and I am eager to see what we can achieve together on this
-                exciting new project.
+                &quot;Maverick WM&quot; project, I feel incredibly fortunate to
+                have been chosen, and I am excited to contribute my skills and
+                expertise to this innovative project. I am honored to have the
+                opportunity to work alongside some of the brightest minds in the
+                industry, and I am eager to see what we can achieve together on
+                this exciting new project.
               </p>
             </div>
           </div>
