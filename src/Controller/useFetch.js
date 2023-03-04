@@ -22,7 +22,7 @@ const useAxiosPost = (url, userData, type) => {
       if (response.status == 200 && type == 'Login') {
         dispatch(isUserLogin(true));
         Router.push('/MainPage');
-      } else if (response.status == 200 && type == 'Register') {
+      } else if (response.status == 200 && type == 'Register' && !error) {
         Router.push('/Login');
       }
     } catch (error) {
