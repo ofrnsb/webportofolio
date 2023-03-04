@@ -5,22 +5,35 @@ import {
   updateUsername,
 } from '@/Modals/Reducers/Reducer';
 import { baseUrl } from '@/Modals/Url/Url';
-import styles from '@/styles/Login.module.css';
+import styles from '@/styles/Register.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const LoginPage = () => {
   const userData = useSelector((state) => state.Appreducer.userData);
   const { isLogin } = useSelector((state) => state.Appreducer.userData);
   const inputRef = useRef();
+  const [info, setInfo] = useState(true);
 
-  const { postData, dispatch, error, fetchData } = useAxiosPost(
+  const { isLoading, postData, dispatch, error, fetchData } = useAxiosPost(
     `${baseUrl}/register`,
     userData,
     'Register'
   );
+
+  useEffect(() => {
+    let a = true;
+
+    setTimeout(() => {
+      setInfo(false);
+    }, 3000);
+
+    return () => {
+      let a = false;
+    };
+  });
 
   return (
     <>
@@ -50,22 +63,35 @@ const LoginPage = () => {
       <main className={styles.main}>
         <form action="" ref={inputRef}>
           {error && <span className={styles.Error}>{fetchData}</span>}
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={(e) => dispatch(updateUsername(e.target.value))}
-          />
-          <input
-            type="text"
-            placeholder="Company"
-            onChange={(e) => dispatch(updateCompany(e.target.value))}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={(e) => dispatch(updatePassword(e.target.value))}
-          />
+          {isLoading && (
+            <span className={styles.Loading}>
+              <div></div>
+            </span>
+          )}
 
+          <div style={{ position: 'relative' }}>
+            <input
+              type="text"
+              placeholder={info ? 'min. 6 character' : 'Username'}
+              onChange={(e) => dispatch(updateUsername(e.target.value))}
+            />
+          </div>
+
+          <div style={{ position: 'relative' }}>
+            <input
+              type="text"
+              placeholder="Company"
+              onChange={(e) => dispatch(updateCompany(e.target.value))}
+            />
+          </div>
+
+          <div style={{ position: 'relative' }}>
+            <input
+              type="password"
+              placeholder={info ? 'min. 8 character' : 'Password'}
+              onChange={(e) => dispatch(updatePassword(e.target.value))}
+            />
+          </div>
           <div className={styles.wrapper}>
             <Link href="/Login">
               <span className={styles.register}>Login</span>

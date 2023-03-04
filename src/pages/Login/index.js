@@ -1,3 +1,4 @@
+import { inputValidation } from '@/Controller/inputValidation';
 import useAxiosPost from '@/Controller/useFetch';
 import { updatePassword, updateUsername } from '@/Modals/Reducers/Reducer';
 import { baseUrl } from '@/Modals/Url/Url';
@@ -11,16 +12,13 @@ const LoginPage = () => {
   const { username, password } = useSelector(
     (state) => state.Appreducer.userData
   );
+  const inputRef = useRef();
 
-  const { postData, dispatch, error, fetchData } = useAxiosPost(
+  const { isLoading, postData, dispatch, error, fetchData } = useAxiosPost(
     `${baseUrl}/login`,
-    {
-      username,
-      password,
-    },
+    { username, password },
     'Login'
   );
-  const inputRef = useRef();
 
   const isLogin = useSelector((state) => state.Appreducer.isLogin);
 
@@ -58,15 +56,25 @@ const LoginPage = () => {
       <main className={styles.main}>
         <form action="" ref={inputRef}>
           {error && <span className={styles.Error}>{fetchData}</span>}
+          {isLoading && (
+            <span className={styles.Loading}>
+              <div></div>
+            </span>
+          )}
 
           <input
+            name="username"
             placeholder="Username"
             onChange={(e) => dispatch(updateUsername(e.target.value))}
           />
           <input
+            name="password"
             type="password"
             placeholder="Password"
-            onChange={(e) => dispatch(updatePassword(e.target.value))}
+            onChange={(e) => {
+              dispatch(updatePassword(e.target.value));
+              inputValidation(e);
+            }}
           />
 
           <div className={styles.wrapper}>
