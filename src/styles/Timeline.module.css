@@ -76,14 +76,16 @@
   color: #f6a4ec;
   font-size: 1rem;
   font-weight: 600;
-  background: #9251ac;
+  background: #dedede;
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
   padding: 0 20px;
   border-radius: 6px 0 0 6px;
-  color: #f0f1f1 !important;
+
+  color: #f0f0f0 !important;
+  letter-spacing: 10px;
 }
 .timeline__event__icon {
   display: flex;
@@ -207,6 +209,7 @@
   .timeline__event__date {
     border-radius: 0;
     padding: 20px;
+    letter-spacing: 5px;
   }
   .timeline__event:nth-child(2n + 1) {
     flex-direction: column;
