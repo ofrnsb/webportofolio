@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function Home() {
   const isLogin = useSelector((state) => state.Appreducer.isLogin);
   const dispatch = useDispatch();
-
+  /* eslint-disable */
   useEffect(() => {
     if (!isLogin) {
       Router.push('/Login');
@@ -17,8 +17,10 @@ export default function Home() {
 
     return () => {
       dispatch(isUserLogin(false));
+      console.log('unmount');
     };
   });
+  /* eslint-enable */
 
   return (
     <>

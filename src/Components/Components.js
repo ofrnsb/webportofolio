@@ -33,13 +33,14 @@ const Snav_Animation = keyframes`
 `;
 
 export const Snav = styled.main`
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1.5rem;
   position: relative;
 
   border-radius: 3rem;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #f0f1f1;
 
   font-weight: 500;
@@ -56,6 +57,25 @@ export const Snav = styled.main`
 
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  .logout {
+    padding: 0.5rem 1rem;
+    border-radius: 5rem;
+
+    background-color: #ebebeb;
+
+    font-size: clamp(0.75rem, 2.5vw, 1.5rem);
+    color: #6e6e6e;
+
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      background-color: #d6d6d6;
+      color: #444444;
+      cursor: pointer;
+      scale: 0.95;
     }
   }
 `;

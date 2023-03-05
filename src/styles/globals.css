@@ -50,6 +50,10 @@ body {
   overflow-x: hidden;
   color: #2d2d2d;
 }
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
 
 a {
   color: inherit;

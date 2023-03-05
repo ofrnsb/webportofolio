@@ -70,6 +70,7 @@
   background: #fff;
   width: calc(80vw - 84px);
   border-radius: 0 6px 6px 0;
+  font-size: 1rem;
 }
 .timeline__event__date {
   color: #f6a4ec;
@@ -189,6 +190,8 @@
   }
   .timeline__event__content {
     width: 100%;
+    font-size: 0.8rem;
+    padding: 10px;
   }
   .timeline__event__icon {
     border-radius: 6px 6px 0 0;

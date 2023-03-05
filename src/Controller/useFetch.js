@@ -18,10 +18,10 @@ const useAxiosPost = (url, userData, type) => {
 
     try {
       const response = await axios.post(url, userData);
-      console.log(userData);
+
       if (response.status == 200 && type == 'Login') {
-        dispatch(isUserLogin(true));
         Router.push('/MainPage');
+        dispatch(isUserLogin(true));
       } else if (response.status == 200 && type == 'Register' && !error) {
         Router.push('/Login');
       }

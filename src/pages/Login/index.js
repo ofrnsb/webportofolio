@@ -1,11 +1,15 @@
 import { inputValidation } from '@/Controller/inputValidation';
 import useAxiosPost from '@/Controller/useFetch';
-import { updatePassword, updateUsername } from '@/Modals/Reducers/Reducer';
+import {
+  isUserLogin,
+  updatePassword,
+  updateUsername,
+} from '@/Modals/Reducers/Reducer';
 import { baseUrl } from '@/Modals/Url/Url';
 import styles from '@/styles/Login.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 const LoginPage = () => {
@@ -22,10 +26,24 @@ const LoginPage = () => {
 
   const isLogin = useSelector((state) => state.Appreducer.isLogin);
 
-  const getLogin = (e) => {
-    postData();
+  /* eslint-disable */
+  useEffect(() => {
+    let a = true;
+    a && dispatch(isUserLogin(false));
+
+    return () => {
+      let a = false;
+    };
+  }, []);
+  /* eslint-enable */
+
+  const getLogin = async (e) => {
     e.preventDefault();
+    await postData();
     inputRef.current.reset();
+
+    dispatch(updateUsername(''));
+    dispatch(updatePassword(''));
   };
 
   return (
@@ -62,20 +80,23 @@ const LoginPage = () => {
             </span>
           )}
 
-          <input
-            name="username"
-            placeholder="Username"
-            onChange={(e) => dispatch(updateUsername(e.target.value))}
-          />
-          <input
-            name="password"
-            type="password"
-            placeholder="Password"
-            onChange={(e) => {
-              dispatch(updatePassword(e.target.value));
-              inputValidation(e);
-            }}
-          />
+          <>
+            <input
+              name="username"
+              placeholder="Username"
+              onChange={(e) => dispatch(updateUsername(e.target.value))}
+            />
+
+            <input
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => {
+                dispatch(updatePassword(e.target.value));
+                inputValidation(e);
+              }}
+            />
+          </>
 
           <div className={styles.wrapper}>
             <Link href="/Register">

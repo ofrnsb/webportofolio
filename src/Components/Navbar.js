@@ -26,6 +26,10 @@ const Navbar = () => {
           {isAnimated && '— 23'}
         </div>
       </Link>
+
+      <Link href="/Login" className="logout">
+        Log Out
+      </Link>
     </Snav>
   );
 };
