@@ -5,9 +5,7 @@ const Timeline = () => {
     <div>
       <div className={styles.timeline}>
         <div className={styles.timeline__event}>
-          <div class={styles.timeline__event__icon}>
-            <i class={styles.lni}></i>
-          </div>
+          <div class={styles.timeline__event__icon}></div>
           <div className={styles.timeline__event__date}>Tokyo Remittance</div>
 
           <div className={styles.timeline__event__content}>
@@ -39,9 +37,7 @@ const Timeline = () => {
         </div>
 
         <div className={styles.timeline__event}>
-          <div class={styles.timeline__event__icon}>
-            <i class={styles.lni}></i>
-          </div>
+          <div class={styles.timeline__event__icon}></div>
           <div className={styles.timeline__event__date}>Mobile Banking</div>
 
           <div className={styles.timeline__event__content}>
@@ -75,9 +71,7 @@ const Timeline = () => {
         </div>
 
         <div className={styles.timeline__event}>
-          <div class={styles.timeline__event__icon}>
-            <i class={styles.lni}></i>
-          </div>
+          <div class={styles.timeline__event__icon}></div>
           <div className={styles.timeline__event__date}>Virtual Asistant</div>
 
           <div className={styles.timeline__event__content}>
@@ -116,9 +110,7 @@ const Timeline = () => {
         </div>
 
         <div className={styles.timeline__event}>
-          <div class={styles.timeline__event__icon}>
-            <i class={styles.lni}></i>
-          </div>
+          <div class={styles.timeline__event__icon}></div>
           <div className={styles.timeline__event__date}>Maverick</div>
 
           <div className={styles.timeline__event__content}>

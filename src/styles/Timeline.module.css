@@ -11,6 +11,41 @@
 
   line-height: 1.8;
 }
+
+.timeline .timeline__event:nth-child(even) {
+  animation: leftToRight 1.5s ease-in-out forwards;
+}
+
+.timeline .timeline__event:nth-child(odd) {
+  animation: rightToLeft 1.5s ease-in-out forwards;
+}
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    margin-left: -40vw;
+    margin-top: 20px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0;
+    margin-top: 0px;
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    margin-right: -40vw;
+    margin-top: -20px;
+  }
+  100% {
+    height: 100%;
+    margin-right: 0vw;
+    margin-top: 0px;
+  }
+}
+
 .timeline__event {
   margin-bottom: 20px;
   position: relative;
@@ -20,6 +55,7 @@
   align-self: center;
   width: 80vw;
 }
+
 .timeline__event:nth-child(2n + 1) {
   flex-direction: row-reverse;
 }
@@ -29,32 +65,7 @@
 .timeline__event:nth-child(2n + 1) .timeline__event__content {
   border-radius: 6px 0 0 6px;
 }
-.timeline__event:nth-child(2n + 1) .timeline__event__icon:before {
-  content: '';
-  width: 2px;
-  height: 100%;
-  background: #f6a4ec;
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  right: auto;
-  z-index: -1;
-  transform: translateX(-50%);
-  animation: fillTop 2s forwards 4s ease-in-out;
-}
-.timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: #f6a4ec;
-  position: absolute;
-  right: 0;
-  z-index: -1;
-  top: 50%;
-  left: auto;
-  transform: translateY(-50%);
-  animation: fillLeft 2s forwards 4s ease-in-out;
-}
+
 .timeline__event__title {
   font-size: 1.2rem;
   line-height: 1.4;
@@ -109,30 +120,7 @@
 .timeline__event__icon i {
   font-size: 32px;
 }
-.timeline__event__icon:before {
-  content: '';
-  width: 2px;
-  height: 100%;
-  background: #f6a4ec;
-  position: absolute;
-  top: 0%;
-  z-index: -1;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: fillTop 2s forwards 4s ease-in-out;
-}
-.timeline__event__icon:after {
-  content: '';
-  width: 100%;
-  height: 2px;
-  background: #f6a4ec;
-  position: absolute;
-  left: 0%;
-  z-index: -1;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: fillLeftOdd 2s forwards 4s ease-in-out;
-}
+
 .timeline__event__description {
   flex-basis: 60%;
 }

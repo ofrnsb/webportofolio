@@ -12,6 +12,18 @@
   line-height: 1.1;
   font-weight: 200;
   letter-spacing: -0.02em;
+  animation: main__TitleAnimation 0.5s ease-out forwards;
+}
+
+@keyframes main__TitleAnimation {
+  from {
+    opacity: 0;
+    margin-top: -20px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0px;
+  }
 }
 
 .main__description p {
@@ -73,6 +85,7 @@
 
   .main__Title {
     font-size: clamp(1rem, 11vw, 18rem);
+    animation: main__TitleAnimation 0.5s ease-out forwards;
   }
 
   .main__circleButton {
