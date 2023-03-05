@@ -5,6 +5,7 @@
   justify-items: center;
   align-items: center;
 }
+
 .Error {
   background-color: #f0f1f1;
 
@@ -84,7 +85,7 @@
   position: relative;
   background-color: #f0f1f1;
 
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
 
   border-radius: 20px;
 
@@ -94,7 +95,33 @@
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 0.5rem;
+
+  animation: registerAnimation 0.5s ease-in forwards,
+    changePaddingBottom 0.5s 0.5s ease-in forwards;
 }
+
+@keyframes registerAnimation {
+  0% {
+    opacity: 0;
+    margin-top: -3rem;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes changePaddingBottom {
+  0% {
+    padding-bottom: 1rem;
+  }
+
+  100% {
+    padding-bottom: 0.5rem;
+  }
+}
+
 .main > form > div > input {
   all: unset;
 
