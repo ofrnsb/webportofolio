@@ -6,12 +6,12 @@ const Timeline = () => {
       <div className={styles.timeline}>
         <div className={styles.timeline__event}>
           <div class={styles.timeline__event__icon}></div>
-          <div className={styles.timeline__event__date}>Tokyo Remittance</div>
+          <div className={styles.timeline__event__date}>DigiRemit</div>
 
           <div className={styles.timeline__event__content}>
             <div className={styles.timeline__event__description}>
               <p>
-                Developed a secure and efficient web application for Digiremit,
+                Developed a secure and efficient web application for DigiRemit,
                 integrating VueJs with SpringBoot backend via REST API.
                 Implemented encryption protocols for user data privacy and
                 streamlined data flow to optimize system performance. Conducted
