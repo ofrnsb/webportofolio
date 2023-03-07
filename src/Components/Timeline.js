@@ -32,15 +32,16 @@ const Timeline = () => {
           <div className={styles.timeline__event__content}>
             <div className={styles.timeline__event__description}>
               <p>
-                Assisted in the development of the <i>Investasi SBN Ritel</i>{' '}
-                feature for the Mobile Banking app, ensuring high standards were
-                met. Collaborated with the team to contribute to logic
-                implementation and convert Figma design into HTML. Worked with
-                the UX/UI team to deliver a user-friendly experience. Provided
-                debugging support to identify and address potential issues.
-                Utilized skills in logic implementation and debugging to ensure
-                the <i>Investasi SBN Ritel</i> feature was delivered to meet the
-                needs of our users.
+                Assisted in the development of the{' '}
+                <i>Investasi Surat Berharga Negara (SBN) Ritel</i> feature for
+                the Mobile Banking app, ensuring high standards were met.
+                Collaborated with the team to contribute to logic implementation
+                and convert Figma design into HTML. Worked with the UX/UI team
+                to deliver a user-friendly experience. Provided debugging
+                support to identify and address potential issues. Utilized
+                skills in logic implementation and debugging to ensure the{' '}
+                <i>Investasi Surat Berharga Negara (SBN) Ritel</i> feature was
+                delivered to meet the needs of our users.
               </p>
             </div>
           </div>
