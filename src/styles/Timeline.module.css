@@ -148,6 +148,8 @@
 }
 .timeline__event--type3:after {
   background: #24b47e;
+
+  /* wkw */
 }
 .timeline__event--type3 .timeline__event__date {
   color: #aff1b6;
