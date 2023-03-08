@@ -3,6 +3,8 @@ const { default: styled, keyframes } = require('styled-components');
 export const Scontainer = styled.div`
   background-color: #ebebeb;
 
+  box-sizing: border-box;
+
   min-height: 100vh;
 
   padding: clamp(1rem, 5vw, 5rem) clamp(1rem, 5vw, 5rem) clamp(4rem, 2vw, 5rem)

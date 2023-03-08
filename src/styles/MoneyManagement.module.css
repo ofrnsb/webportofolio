@@ -1,0 +1,81 @@
+.mainDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+
+  gap: 30px;
+}
+
+.chart {
+  height: 100%;
+  width: 99%;
+}
+
+.formUser {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+.formUser > input {
+  background: #f2f2f2;
+
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: none;
+
+  transition: 0.3s ease-in-out;
+
+  font-size: 1rem;
+
+  color: #323232;
+}
+
+.invalid {
+  border: 1px solid red;
+  background: red;
+}
+
+.formUser > input:focus {
+  background: black;
+  color: white;
+}
+.formUser > input::placeholder {
+  font-size: 1rem;
+  color: gray;
+}
+
+.formUser > input:nth-child(4) {
+  height: clamp(100px, 15vh, 400px);
+}
+
+.formUser > button {
+  all: unset;
+  background: #f2f2f2;
+
+  padding: 10px 5px;
+
+  border-radius: 5px;
+  border: none;
+
+  text-align: center;
+
+  transition: all 0.5s ease-in;
+}
+
+.formUser > button:hover {
+  background: #323232;
+
+  color: white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .mainDiv {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.75fr 1fr;
+  }
+}

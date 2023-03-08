@@ -30,6 +30,10 @@ const LoginPage = () => {
   useEffect(() => {
     let a = true;
     a && dispatch(isUserLogin(false));
+    a &&
+      alert(
+        'Feel free to visit http://ondifransb.vercel.app/MoneyManagement to check what I am up to right now.'
+      );
 
     return () => {
       let a = false;
