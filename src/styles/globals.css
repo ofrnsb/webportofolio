@@ -55,6 +55,16 @@ body {
   background: transparent; /* Optional: just make scrollbar invisible */
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Remove input number Arrow => Chrome, Safari */
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Remove input number Firefox */
+}
+
 a {
   color: inherit;
   text-decoration: none;
