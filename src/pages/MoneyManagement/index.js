@@ -22,7 +22,9 @@ const Index = () => {
     };
   }, []);
 
-  const chartLabels = [...new Set(mManagement.map((item) => item.name))];
+  const chartLabels = [
+    ...new Set(([] || mManagement).map((item) => item.name)),
+  ];
 
   const data = {
     //ambil dari balikan Backend(name)
@@ -31,7 +33,7 @@ const Index = () => {
       {
         // label: 'Spending:',
         //ambil dari balikan (amount)
-        data: chartLabels.map((name) =>
+        data: ([] || chartLabels).map((name) =>
           mManagement.reduce(
             (total, item) => (item.name === name ? total + item.amount : total),
             0
