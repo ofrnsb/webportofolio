@@ -9,6 +9,7 @@ const useAxiosPost = (url, userData, type) => {
   const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [fetchData, setFetchData] = useState();
+  const [mManagement, setmManagement] = useState();
 
   const dispatch = useDispatch();
   const isLogin = useSelector((state) => state.Appreducer.isLogin);
@@ -37,7 +38,24 @@ const useAxiosPost = (url, userData, type) => {
     }, 1500);
   };
 
-  return { error, isLoading, postData, dispatch, fetchData };
+  const getData = async () => {
+    try {
+      const response = await axios.get(url);
+      setmManagement(response.data[0].category);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return {
+    error,
+    isLoading,
+    postData,
+    dispatch,
+    fetchData,
+    getData,
+    mManagement,
+  };
 };
 
 export default useAxiosPost;

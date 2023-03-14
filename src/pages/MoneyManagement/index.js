@@ -1,4 +1,7 @@
 import DropDown from '@/Components/DropDown';
+import useAxiosPost from '@/Controller/useFetch';
+import { dummyData } from '@/Modals/dummyData';
+import { baseUrl } from '@/Modals/Url/Url';
 import styles from '@/styles/MoneyManagement.module.css';
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js';
 import Head from 'next/head';
@@ -6,20 +9,21 @@ import { useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const data = {
-  labels: [
-    'Investation',
-    'Daily Needs',
-    'Grocery',
-    'GYM',
-    'Transport',
-    'Rent',
-    'Hang Out',
-  ],
+const chartLabels = [...new Set(dummyData.map((item) => item.name))];
+
+const data = {
+  //ambil dari balikan Backend(name)
+  labels: chartLabels,
   datasets: [
     {
-      label: 'Spending: ',
-      data: [12, 19, 8, 2, 5, 8, 3],
+      // label: 'Spending:',
+      //ambil dari balikan (amount)
+      data: chartLabels.map((name) =>
+        dummyData.reduce(
+          (total, item) => (item.name === name ? total + item.amount : total),
+          0
+        )
+      ),
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -44,6 +48,9 @@ export const data = {
 };
 
 const Index = () => {
+  const { isLoading, getData, dispatch, error, fetchData, mManagement } =
+    useAxiosPost(`${baseUrl}/moneymanagement`);
+
   useEffect(() => {
     let a = true;
 
@@ -56,7 +63,8 @@ const Index = () => {
 
   const getSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    console.log(chatData);
+    getData();
   };
 
   return (
@@ -84,6 +92,7 @@ const Index = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <div className={styles.mainDiv}>
         <section className={styles.chart}>
           <Doughnut
