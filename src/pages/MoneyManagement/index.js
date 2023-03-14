@@ -1,6 +1,5 @@
 import DropDown from '@/Components/DropDown';
 import useAxiosPost from '@/Controller/useFetch';
-import { dummyData } from '@/Modals/dummyData';
 import { baseUrl } from '@/Modals/Url/Url';
 import styles from '@/styles/MoneyManagement.module.css';
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js';
@@ -8,44 +7,6 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 ChartJS.register(ArcElement, Tooltip, Legend);
-
-const chartLabels = [...new Set(dummyData.map((item) => item.name))];
-
-const data = {
-  //ambil dari balikan Backend(name)
-  labels: chartLabels,
-  datasets: [
-    {
-      // label: 'Spending:',
-      //ambil dari balikan (amount)
-      data: chartLabels.map((name) =>
-        dummyData.reduce(
-          (total, item) => (item.name === name ? total + item.amount : total),
-          0
-        )
-      ),
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-        '#000000',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-        '000000',
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
 
 const Index = () => {
   const { isLoading, getData, dispatch, error, fetchData, mManagement } =
@@ -60,6 +21,44 @@ const Index = () => {
       let a = false;
     };
   }, []);
+
+  const chartLabels = [...new Set(mManagement.map((item) => item.name))];
+
+  const data = {
+    //ambil dari balikan Backend(name)
+    labels: chartLabels,
+    datasets: [
+      {
+        // label: 'Spending:',
+        //ambil dari balikan (amount)
+        data: chartLabels.map((name) =>
+          mManagement.reduce(
+            (total, item) => (item.name === name ? total + item.amount : total),
+            0
+          )
+        ),
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          '#000000',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          '000000',
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
 
   const getSubmit = (e) => {
     e.preventDefault();
